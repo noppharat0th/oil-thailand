@@ -11,7 +11,7 @@ export default defineEventHandler(async (event) => {
         </soap:Body>
         </soap:Envelope>`
 
-        const response = await $fetch<string>('https://orapiweb.pttor.com/oilservice/OilPrice.asmx', {
+        const response = await fetch('https://orapiweb.pttor.com/oilservice/OilPrice.asmx', {
             method: 'POST',
             headers: {
                 'Content-Type': 'text/xml; charset=utf-8',
@@ -25,6 +25,7 @@ export default defineEventHandler(async (event) => {
         }
 
         const xmlResponse = await response.text()
+
 
 
         const parsedSoap: any = await parseStringPromise(xmlResponse, {
