@@ -1,17 +1,5 @@
 <template>
-  <div>
-    <NuxtRouteAnnouncer />
-    <NuxtWelcome />
-  </div>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
-
-<script setup>
-onMounted(() => {
-
-  fetch('/api/or')
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data)
-    })
-})
-</script>
